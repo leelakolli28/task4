@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky shopping mall</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Home Section with Background Image */
+        #home {
+            background: url('https://www.colorkinetics.com/content/dam/color-kinetics/showcases/luckyone-mall/lucky_one_mall2.jpg') no-repeat center center/cover;
+            color: rgb(242, 238, 247);
+            text-align:center;
+            padding: 100px 0;
+            height:700px;
+        }
+
+        #home h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        #home p {
+            font-size: 1.5em;
+        }
+
+        /* Product Listing Section */
+        #products {
+            padding: 20px;
+            background-color: #7950a8;
+        }
+
+        h2 {
+            text-align: center;
+            height:90px;
+        }
+
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters select {
+            margin: 0 10px;
+            padding: 5px;
+            height:500;
+        }
+
+        /* Product Cards */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 50px;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .product h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+
+        /* Text on Image */
+        .product .clothes-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: rgb(247, 241, 241);
+            padding: 5px;
+            font-size: 1.5em;
+        }
+
+        /* Media Query for Responsiveness */
+        @media (max-width: 768px) {
+            .product-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Section -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href ="C:\Users\koppi\OneDrive\Documents\Desktop\folio\index.html">portfolio</a></li>
+            <li><a href ="C:\Users\koppi\OneDrive\Documents\Desktop\todo\index.html">todo list</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section with Background Image -->
+     <section id="home">
+        <h1>Welcome to Lucky shopping mall </h1>
+        <p>Deal of the day!</p>
+    </section>
+    <!-- Product Listing Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+s
+        <!-- Filter Section -->
+        <div class="filters">
+            <label for="category">Category:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="Froks">Froks</option>
+                <option value="sarees">sarees</option>
+                <option value="dresses">dresses</option>
+                <option value="shirts">shirts</option>
+                <option value="lehanga">lehanga</option>
+            </select>
+
+            <label for="sort">Sort By:</label>
+            <select id="sort" onchange="sortProducts()">
+                <option value="low-to-high">Low Cost to High Cost</option>
+                <option value="high-to-low">High Cost to Low Cost</option>
+                <option value="offers">Offers</option>
+            </select>
+        </div>
+
+        <!-- Product List -->
+        <div class="product-list" id="product-list">
+            <div class="product" data-category="Froks" data-price="500" data-rating="4" data-offers="false">
+                <img src="https://dhartibandhani.com/cdn/shop/files/WhatsApp_Image_2024-06-12_at_14.08.44.jpg?v=1718183534&width=1946"alt="Froks" height="800px" width="200px">
+                <div class="Froks"></div>
+                <h3>Froks</h3>
+                <p>Price: $500</p>
+                <p>Rating: 4/5</p>
+            </div>
+
+            <div class="product" data-category="sarees" data-price="700" data-rating="4.5" data-offers="true">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3F8lCtrt1DQNBcuh4dfJibbYiUgikJWt85A&s" alt="sarees">
+                <div class="sarees"></div>
+                <h3>saree</h3>
+                <p>Price: $700</p>
+                <p>Rating: 4.5/5</p>
+            </div>
+
+            <div class="product" data-category="dresses" data-price="300" data-rating="4" data-offers="false">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqTmirlofywCSMoKexBfdcE8tuKB6SRzbJAg&s" alt="dresses">
+                <div class="dresses"></div>
+                <h3>Dress</h3>
+                <p>Price: $300</p>
+                <p>Rating: 4/5</p>
+            </div>
+
+            <div class="product" data-category="shirts" data-price="200" data-rating="3.8" data-offers="false">
+                <img src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/13722908/2021/3/3/d1ee19bd-73c9-4ca4-a8e9-624c18128a6e1614752690702-Roadster-Women-Black--White-Regular-Fit-Checked-Casual-Shirt-1.jpg" alt="shirts">
+                <div class="shirts"></div>
+                <h3>Shirts</h3>
+                <p>Price: $200</p>
+                <p>Rating: 3.8/5</p>
+            </div>
+
+            <div class="product" data-category="lehanga" data-price="150" data-rating="4.2" data-offers="false">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20230824/8AUk/64e7733dddf7791519690a65/-473Wx593H-466165238-purple-MODEL.jpg" alt="lehanga">
+                <div class="lehanga"></div>
+                <h3>Lehanga</h3>
+                <p>Price: $150</p>
+                <p>Rating: 4.2/5</p>
+            </div>
+
+            <div class="product" data-category="Froks" data-price="1200" data-rating="5" data-offers="true">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjmOKv_2BXDj9jbPioj3rwog8OTDtNXFQ-ww&s" alt="Froks">
+                <div class="Froks"></div>
+                <h3>Froks</h3>
+                <p>Price: $1200</p>
+                <p>Rating: 5/5</p>
+            </div>
+
+            <div class="product" data-category="sarees" data-price="900" data-rating="4.7" data-offers="true">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdRzVRvl7u22gMAyaXz6Sy3-KN8sWQx7dCHg&s" alt="sarees">
+                <div class="sarees"></div>
+                <h3>saree</h3>
+                <p>Price: $900</p>
+                <p>Rating: 4.7/5</p>
+            </div>
+
+            <div class="product" data-category="dresses" data-price="350" data-rating="4.3" data-offers="false">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/5/310287602/FH/UL/SD/66774151/designer-gown-for-women.jpeg" alt="dresses">
+                <div class="dresses"></div>
+                <h3>Dress</h3>
+                <p>Price: $350</p>
+                <p>Rating: 4.3/5</p>
+            </div>
+
+            <div class="product" data-category="shirts" data-price="180" data-rating="4.1" data-offers="false">
+                <img src="https://4.imimg.com/data4/IF/XB/ANDROID-9241138/product-500x500.jpeg" alt="shirts">
+                <div class="shirts"></div>
+                <h3>Shirts</h3>
+                <p>Price: $180</p>
+                <p>Rating: 4.1/5</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to filter products by category
+        function filterProducts() {
+            const category = document.getElementById('category').value;
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Function to sort products by price or offers
+        function sortProducts() {
+            const sortBy = document.getElementById('sort').value;
+            const productList = document.getElementById('product-list');
+            const products = Array.from(productList.getElementsByClassName('product'));
+
+            if (sortBy === 'low-to-high') {
+                products.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortBy === 'high-to-low') {
+                products.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+            } else if (sortBy === 'offers') {
+                products.sort((a, b) => (b.dataset.offers === 'true' ? 1 : 0) - (a.dataset.offers === 'true' ? 1 : 0));
+            }
+
+            // Reorder the products on the page
+            products.forEach(product => productList.appendChild(product));
+        }
+    </script>
+</body>
+
+</html>
